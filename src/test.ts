@@ -6,7 +6,7 @@ async function main() {
   const orm = await MikroORM.init(mikroOrmConfig);
   const em = orm.em.fork();
   const userWrite = await em.find(User, { id: 1 }, { connectionType: "write" });
-  const userRead = await em.find(User, { id: 1 }, { connectionType: "read" });
+  const userRead = await em.find(User, { id: 2 }, { connectionType: "read" });
   console.log({ userWrite, userRead });
   await orm.close();
 }

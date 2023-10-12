@@ -19,6 +19,7 @@ const config = {
     entities: ['src/**/*.entity.ts'],
     entitiesTs: ['src/**/*.entity.ts'],
     migrations: {
+      transactional: false,
         pathTs: 'src/database/migrations',
     },
     debug: true,

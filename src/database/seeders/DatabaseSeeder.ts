@@ -6,7 +6,7 @@ export class DatabaseSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
     const dbUrl = process.env.DATABASE_URL!
     
-    const data : Partial<User> = dbUrl.includes('read') ? { firstName: "John", lastName: "Doe" } : { firstName: "Jane", lastName: "Doe" }
-    await em.insert(User, data);
+    const data : Partial<User> = dbUrl.includes('read') ? { firstName: "John", lastName: "READ" } : { firstName: "Jane", lastName: "WRITE" }
+    await em.insertMany(User, [data, data]);
   }
 }
